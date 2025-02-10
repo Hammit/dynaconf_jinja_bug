@@ -28,3 +28,7 @@ jobs:
 
       - name: Run Django check
         run: python3 ./manage.py check --settings django42_dynaconf_jinja.development
+
+      - name: Run Dynaconf list
+        run: |
+          DJANGO_SETTINGS_MODULE=django42_dynaconf_jinja.development dynaconf list -k DICT
