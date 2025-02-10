@@ -32,3 +32,4 @@ jobs:
       - name: Run Dynaconf list
         run: |
           DJANGO_SETTINGS_MODULE=django42_dynaconf_jinja.development dynaconf list -k DICT
+          DJANGO_SETTINGS_MODULE=django42_dynaconf_jinja.development dynaconf list -k TEST
