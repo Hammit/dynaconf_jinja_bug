@@ -1,8 +1,7 @@
 {
-    // Environment (default is merged with all environments)
     "default": {
         "TEST": {
-            "SERVERS": "@json @jinja {{ this.DICT.keys() }}",
+            "SERVERS": "@json @jinja {{ this.DICT.keys() | list }}"
         }
     }
 }
