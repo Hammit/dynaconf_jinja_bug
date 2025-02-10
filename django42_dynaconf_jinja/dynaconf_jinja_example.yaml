@@ -1,0 +1,22 @@
+default:
+  MODEL_1:
+    MODEL_PATH: "src.main.models.CNNModel"
+    GPU_COUNT: 4
+    OPTIMIZER_KWARGS:
+      learning_rate: 0.002
+  
+  MODEL_2:
+    MODEL_PATH: "src.main.models.VGGModel"
+    GPU_COUNT: 2
+    OPTIMIZER_KWARGS:
+      learning_rate: 0.001
+  
+  # Flag to choose which model to use
+  MODEL_TYPE: "MODEL_2"
+  
+  # This returns the dict loaded from the resulting json
+  MODEL_SETTINGS_DICT: "@json @jinja {{ this|attr(this.MODEL_TYPE) }}"
+  
+  # This returns the raw json string
+  MODEL_SETTINGS_STR: "@jinja {{ this|attr(this.MODEL_TYPE) }}"
+
